@@ -131,6 +131,7 @@ void callback(uchar *argument,const pcap_pkthdr *packet_header,
 
     }
     fprintf(out,"%d\n",packet_header->len);
+    if(packet_header->len>1024)printf("流量过大！\n");
     time(&time_e);
     int ptime=(int)((time_e-time_s));
     printf("%d\n",ptime);
